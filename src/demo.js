@@ -13,9 +13,9 @@ const BoxContainer = styled.div((props) => ({
 }));
 
 const options = [
-  { id: 345344, age: 10, name: "julio" },
-  { id: 35645, age: 20, name: "marco" },
-  { id: 4365456, age: 30, name: "ana" }
+  { id: 345344, age: 10, name: "joe" },
+  { id: 35645, age: 20, name: "steve" },
+  { id: 4365456, age: 30, name: "michael" }
 ];
 
 export default function BasicSelect(props) {
@@ -36,12 +36,12 @@ export default function BasicSelect(props) {
           label="Age"
           onChange={handleChange}
         >
-          {options.map((o) => {
+          {options.map((option) => {
             return (
-              <MenuItem key={o.id} value={o.age}>
+              <MenuItem key={option.id} value={option.age}>
                 <BoxContainer column={props.column}>
-                  <p>{o.age}</p>
-                  <div>{o.name}</div>
+                  <p>{option.age}</p>
+                  <div>{option.name}</div>
                 </BoxContainer>
               </MenuItem>
             );

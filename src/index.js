@@ -8,7 +8,7 @@ ReactDOM.createRoot(document.querySelector("#root")).render(
     <StyledEngineProvider injectFirst>
       <Demo />
 
-      <Demo column />
+      
     </StyledEngineProvider>
   </React.StrictMode>
 );

@@ -9,8 +9,14 @@ import styled from "@emotion/styled";
 
 const BoxContainer = styled.div((props) => ({
   display: "flex",
-  flexDirection: props.column && "column"
+  justifyContent: "space-between",
+  gap: "10px"
 }));
+
+const SelectStyled = styled(Select)({
+  display: "flex",
+  justifyContent: "space-around"
+});
 
 const options = [
   { id: 345344, age: 10, name: "joe" },
@@ -29,24 +35,24 @@ export default function BasicSelect(props) {
     <Box sx={{ minWidth: 120 }}>
       <FormControl fullWidth>
         <InputLabel id="demo-simple-select-label">Age</InputLabel>
-        <Select
+        <SelectStyled
           labelId="demo-simple-select-label"
           id="demo-simple-select"
-          value={age}
+          value={age.age}
           label="Age"
           onChange={handleChange}
         >
           {options.map((option) => {
             return (
-              <MenuItem key={option.id} value={option.age}>
+              <MenuItem key={option.id} value={option}>
                 <BoxContainer column={props.column}>
                   <p>{option.age}</p>
-                  <div>{option.name}</div>
+                  <p>{option.name}</p>
                 </BoxContainer>
               </MenuItem>
             );
           })}
-        </Select>
+        </SelectStyled>
       </FormControl>
     </Box>
   );
